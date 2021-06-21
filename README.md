@@ -12,3 +12,20 @@ Setup database by running
 ```
 docker-compose -f ./etc/database/docker-compose.yml up -d
 ```
+
+To run the project
+
+```
+mvn spring-boot:run  
+```
+
+To view available endpoints
+
+```
+http://localhost:8080/swagger-ui/
+```
+
+Default username and password 
+
+    username: locationservice
+    password: locationservice

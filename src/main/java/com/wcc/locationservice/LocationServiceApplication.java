@@ -33,7 +33,7 @@ public class LocationServiceApplication extends WebSecurityConfigurerAdapter {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.wcc.locationservice"))
                 .paths(PathSelectors.any())
                 .build();
     }
