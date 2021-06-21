@@ -3,6 +3,7 @@ package com.wcc.locationservice.distance;
 import com.wcc.locationservice.postcode.Postcode;
 import com.wcc.locationservice.postcode.PostcodeService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class DistanceController {
         this.distanceService = distanceService;
     }
 
-    @GetMapping(path = "/api/distance", produces = "application/json")
+    @GetMapping(path = "/api/distance", produces = MediaType.APPLICATION_JSON_VALUE)
     public DistanceCalcResultDto calcDistance(@RequestParam String postcode1, @RequestParam String postcode2) {
         Postcode postcodeObj1 = postcodeService
                 .findByPostcode(postcode1)

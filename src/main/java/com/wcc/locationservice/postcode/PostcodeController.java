@@ -21,7 +21,7 @@ public class PostcodeController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
     }
 
-    @PutMapping(path = "/api/postcode/{id}", consumes = {MediaType.APPLICATION_JSON_VALUE})
+    @PutMapping(path = "/api/postcode/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Postcode updatePostcode(@PathVariable("id") Long id, @RequestBody PostcodeDto requestBody) {
         Postcode postcode = PostcodeMapper.DtoToEntity(requestBody);
 
